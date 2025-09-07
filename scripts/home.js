@@ -57,3 +57,58 @@ const obs = new IntersectionObserver((entries) => {
 
 obs.observe(document.getElementById("2nd"));
 
+const pichover = document.getElementById("i");
+const tar1 = document.getElementById("ch");
+const tar2 = document.getElementById("tabbg");
+
+pichover.addEventListener("mouseenter", (e) => {
+    tar1.style.opacity = "1";
+    tar2.style.opacity = "1";
+    tar1.style.pointerEvents = "auto";
+
+    pichover.style.transform = "scale(1.1)";
+});
+
+pichover.addEventListener("mouseleave", (e) => {
+    tar2.style.opacity = "0";
+    tar1.style.opacity = "0";
+    tar1.style.pointerEvents = "none";
+
+    pichover.style.transform = "scale(1)";
+});
+[tar1, tar2].forEach(el => {
+    pichover.style.transform = "scale(1.1)";
+    el.addEventListener("mouseenter", () => {
+        tar1.style.opacity = "1";
+        tar2.style.opacity = "1";
+        tar1.style.pointerEvents = "auto";
+        pichover.style.transform = "scale(1.1)";
+    });
+});
+
+const mainPic = document.getElementById("i");
+const listItems = document.querySelectorAll("#ch li");
+
+listItems.forEach(li => {
+    li.addEventListener("click", () => {
+        const newSrc = li.getAttribute("data-src"); // get the path from data-src
+        mainPic.src = newSrc; // update the main picture
+    });
+});
+
+const tab = document.getElementById("tab");
+
+
+listItems.forEach((li, index) => {
+    li.addEventListener("click", () => {
+        // Move tab based on index
+        if (index === 0) {
+            tab.style.transform = "translate(-288%, -50%)";
+        } else if (index === 1) {
+            tab.style.transform = "translate(-50%, -50%)";
+        } else if (index === 2) {
+            tab.style.transform = "translate(188%, -50%)";
+        }
+    });
+});
+

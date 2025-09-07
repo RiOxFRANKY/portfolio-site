@@ -3,6 +3,7 @@
 body {
     padding: 20px;
     background-color: #FFFDF6;
+    align-items: center;
 }
 html {
     scroll-behavior: smooth;
@@ -17,6 +18,11 @@ html {
     height: 50px;
     width: 50px;
     border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+#pic:hover {
+    transform: scale(1.1);
 }
 
 #name{
@@ -138,6 +144,7 @@ nav a:nth-child(3):hover~span{
 
 }
 #bg img{
+
     width: 30%;
     height: 30%;
     align-content: center;
@@ -153,7 +160,7 @@ nav a:nth-child(3):hover~span{
     50% { border-color: transparent; }
 }
 #bg h2,
-#bg h3 {
+#bg h3{
     position: absolute;
     color: black;
     text-align: center;
@@ -175,12 +182,87 @@ nav a:nth-child(3):hover~span{
 
 }
 
+#bg h4 {
+    position: absolute;
+    top: 20%;
+    color: black;
+    background: transparent; /* ensure no box covers bgc */
+    z-index: 5; /* always above background */
+    margin: 0;
+    padding: 0;
+}
+
 .pic{
     display: flex;
     width: 25px;
     height: 25px;
 }
+#ggs {
+    padding-top: 30px;/* full viewport height */
+    resize: both;
+    overflow: auto;                /* full viewport width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;       /* vertical center */
+    align-items: center;           /* horizontal center */
+    position: relative;
+    bottom: 100px;
+}
 
+#ggs ul{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:80px;
+}
+
+#tabbg {
+    position: absolute;
+    background: linear-gradient(45deg, #FAF6E9 , #DDEB9D);
+    padding: 25px 140px 25px 140px;
+    border-radius: 50px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+#tab {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #DDEB9D ,#A0C878);
+    transition: 0.5s ease;
+    z-index: -1;
+
+}
+
+
+#ch li:nth-child(1):hover ~ #tab {
+    transform: translate(-288%, -50%);
+}
+#ch li:nth-child(2):hover ~ #tab {
+    transform: translate(-50%, -50%);
+}
+#ch li:nth-child(3):hover ~ #tab {
+    transform: translate(188%, -50%);
+}
+#ch {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 4;
+}
 #social {
     list-style-type: none;
     display: flex;
@@ -192,10 +274,13 @@ nav a:nth-child(3):hover~span{
 #social li {
     display: inline-block;
     margin: 0 30px;
+    transition: transform 0.3s ease;
 }
-
+#social li:hover {
+    transform: scale(1.1);
+}
 footer{
-    background: #A0C878;
+    background: linear-gradient(45deg, #DDEB9D , #A0C878);
     padding-top: 100px;
     padding-bottom: 30px;
     clip-path: polygon(0 0, 120% 60%, 100% 100%, 0 100%);
@@ -219,5 +304,39 @@ footer{
 }
 #right{
     align-items: flex-end;
+}
+
+#bgc {
+    position: absolute;
+    left: 0;
+    width: 95.15em;
+    height: 40em;
+    top: 470px;
+    background: linear-gradient(45deg, #DDEB9D , #A0C878);
+    z-index: -1;
+    margin-left: -30px;
+    clip-path: polygon(
+            0% 20%,    /* top-left shifted down */
+            100% 0%,   /* top-right */
+            100% 100%, /* bottom-right */
+            0% 80%     /* bottom-left shifted up */
+    );
+}
+#me {
+    display: flex;            /* so child elements align inside */
+    flex-direction: column;   /* pic + div stacked vertically */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 0;/* space between pic and div */
+}
+#me img{
+    margin-bottom: 40%;
+    width: 600px;
+    height: 337.5px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
