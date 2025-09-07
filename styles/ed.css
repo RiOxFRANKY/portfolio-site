@@ -1,0 +1,180 @@
+body {
+    padding: 20px;
+    background-color: #FFFDF6;
+}
+
+#id {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+html {
+    scroll-behavior: smooth;
+}
+#pic{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+#name{
+    margin: 0;
+    line-height: 1px;
+}
+
+#cour{
+    margin: 0;
+    color : gray;
+    font-weight: normal;
+    line-height: 1px;
+}
+
+.txt {
+    gap : 5px;
+    font-family: Courier, monospace;
+    font-size: 13px;
+}
+
+#contact {
+    position: absolute;
+    top: 30px;
+    right: 60px;
+    font-size: 15px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 40px;
+    background: #DDEB9D;
+
+
+    transition: background 0.2s ease-in;
+}
+
+#contact:hover {
+    background: #A0C878;
+}
+
+#contact h2 {
+    color: whitesmoke;
+    margin: 0;
+    font-family: "Consolas", "Arial Narrow", Arial, sans-serif;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+
+    display: inline-block;
+}
+
+#contact h2 a{
+    text-decoration: none;
+    display: inline-block;
+    color: #FAF6E9;
+}
+
+
+nav {
+    position: absolute;
+    top: 30px;
+    right: 280px;
+    width: 320px;
+    height: 50px;
+    padding: 0 10px 0 20px;
+    background: #FAF6E9;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav a{
+    gap: 20px;
+    font-family: Courier, monospace;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    font-size: 1em;
+    color: #A0C878;
+    text-decoration: none;
+    padding: 0 23px;
+    z-index: 1;
+}
+
+a.active{
+    color: black;
+}
+nav a:hover{
+    color: black;
+}
+nav span{
+    position: absolute;
+    top: 0;
+    left: 230px;
+    width: 120px;
+    height: 100%;
+    background: linear-gradient(45deg, #DDEB9D , #A0C878);
+    border-radius: 20px;
+    transition: 0.5s;
+    z-index: 0;
+}
+
+
+nav a.active:hover{
+    color: #FAF6E9;
+}
+nav a:nth-child(1):hover~span{
+    left: 0;
+    right: 110px;
+}
+nav a:nth-child(2):hover~span{
+    left: 110px;
+    right: 220px;
+}
+nav a:nth-child(3):hover~span{
+    left: 230px;
+    right: 350px;
+}
+
+#bg{
+    display: flex;
+    padding-top: 400px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 400px;
+
+}
+#bg img{
+    width: 30%;
+    height: 30%;
+    align-content: center;
+    justify-content: center;
+    opacity: 70%;
+    border-radius:10%;
+    box-shadow: 0 0 30px 10px rgba(255,255,255,0.9) inset;
+    z-index: 3;
+    transition: background 0.2s ease-out;
+
+}
+
+.pic{
+    display: flex;
+    width: 25px;
+    height: 25px;
+}
+
+#social {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    margin: 10px;
+}
+
+#social li {
+    display: inline-block;
+    margin: 0 30px;
+}
+
+footer{
+    background: #A0C878;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    clip-path: polygon(0 0, 120% 60%, 100% 100%, 0 100%);
+    margin: 0 -28px -40px -28px;
+}
