@@ -181,6 +181,13 @@ nav a:nth-child(3):hover~span{
     text-align: left;
 
 }
+#1st {
+    cursor: default;
+}
+
+#2nd {
+    cursor: default;
+}
 
 #bg h4 {
     position: absolute;
@@ -199,8 +206,7 @@ nav a:nth-child(3):hover~span{
 }
 #ggs {
     padding-top: 30px;/* full viewport height */
-    resize: both;
-    overflow: auto;                /* full viewport width */
+                    /* full viewport width */
     display: flex;
     flex-direction: column;
     justify-content: center;       /* vertical center */
@@ -224,6 +230,7 @@ nav a:nth-child(3):hover~span{
     border-radius: 50px;
     opacity: 0;
     transition: opacity 0.3s ease;
+    bottom: 307.5px;
 }
 #tab {
     position: absolute;
@@ -323,12 +330,15 @@ footer{
     );
 }
 #me {
-    display: flex;            /* so child elements align inside */
-    flex-direction: column;   /* pic + div stacked vertically */
+    display: block;            /* so child elements align inside */
+    flex-direction: inherit;   /* pic + div stacked vertically */
     align-items: center;
     justify-content: center;
+    margin-bottom: 0;
+    height: 400px;
     gap: 20px;
     z-index: 0;/* space between pic and div */
+    padding-bottom: 40px;
 }
 #me img{
     margin-bottom: 40%;
@@ -340,3 +350,34 @@ footer{
     transition: transform 0.3s ease;
 }
 
+#n{
+    display: flex;
+    padding-bottom: 20px;
+    font-family: 'Figtree', "Times New Roman", Times, serif;
+    font-size: 30px;
+    text-shadow: 2px 2px 6px #A0C878;
+    cursor: default;
+    transition: transform 0.3s ease;
+}
+
+#desc{
+    display: flex;
+    font-family: 'Figtree', "Times New Roman", Times, serif;
+    font-size: 20px;
+    text-shadow: 2px 2px 6px #A0C878;
+    cursor: default;
+    transition: transform 0.3s ease;
+}
+
+.nav{
+    position: relative;
+    bottom: 320px;
+}
+
+#n:hover{
+    transform: scale(1.1);
+}
+
+#desc:hover{
+    transform: scale(1.1);
+}
